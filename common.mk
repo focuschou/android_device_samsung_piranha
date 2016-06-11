@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,23 +14,25 @@
 # limitations under the License.
 #
 
+# Include common omap4 makefile
+$(call inherit-product, hardware/ti/omap4/omap4.mk)
+
 COMMON_PATH := device/samsung/piranha
 
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
 # Omap4 Packages
 PRODUCT_PACKAGES += \
-    libedid \
-    libion_ti \
-    libstagefrighthw \
-    smc_pa_ctrl \
-    tf_daemon \
-    libcorkscrew \
-    pvrsrvinit \
-    libPVRScopeServices.so
+    libedid
 
+# Packages
 PRODUCT_PACKAGES += \
+    audio.primary.piranha \
+    camera.piranha \
+    lights.piranha \
+    power.piranha \
     audio.a2dp.default \
     audio.usb.default \
     libtinyalsa \
@@ -65,9 +67,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
-
-# Include omap4 specific parts
-$(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
 
 # Include non-opensource parts if available
 $(call inherit-product-if-exists, vendor/samsung/piranha/common-vendor.mk)

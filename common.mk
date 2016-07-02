@@ -55,6 +55,16 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
 
+# RIL
+PRODUCT_PACKAGES += \
+    libsecril-client \
+    libxml2
+
+# Samsung symbols
+PRODUCT_PACKAGES += \
+    libsamsung_symbols \
+    ril-wrapper
+    
 PRODUCT_PROPERTY_OVERRIDES += \
     com.ti.omap_enhancement=true \
     omap.enhancement=true \

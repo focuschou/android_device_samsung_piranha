@@ -168,7 +168,7 @@ public class SamsungOmap4RIL extends RIL implements CommandsInterface {
             case RIL_REQUEST_ENTER_SIM_PUK2: ret =  responseInts(p); break;
             case RIL_REQUEST_CHANGE_SIM_PIN: ret =  responseInts(p); break;
             case RIL_REQUEST_CHANGE_SIM_PIN2: ret =  responseInts(p); break;
-            case RIL_REQUEST_ENTER_DEPERSONALIZATION_CODE: ret =  responseInts(p); break;
+            case RIL_REQUEST_ENTER_NETWORK_DEPERSONALIZATION: ret =  responseInts(p); break;
             case RIL_REQUEST_GET_CURRENT_CALLS: ret =  responseCallList(p); break;
             case RIL_REQUEST_DIAL: ret =  responseVoid(p); break;
             case RIL_REQUEST_DIAL_EMERGENCY: ret =  responseVoid(p); break;
@@ -188,7 +188,7 @@ public class SamsungOmap4RIL extends RIL implements CommandsInterface {
             case RIL_REQUEST_SWITCH_WAITING_OR_HOLDING_AND_ACTIVE: ret =  responseVoid(p); break;
             case RIL_REQUEST_CONFERENCE: ret =  responseVoid(p); break;
             case RIL_REQUEST_UDUB: ret =  responseVoid(p); break;
-            case RIL_REQUEST_LAST_CALL_FAIL_CAUSE: ret =  responseInts(p); break;
+            case RIL_REQUEST_LAST_CALL_FAIL_CAUSE: ret =  responseFailCause(p); break;
             case RIL_REQUEST_SIGNAL_STRENGTH: ret =  responseSignalStrength(p); break;
             case RIL_REQUEST_VOICE_REGISTRATION_STATE: ret =  responseStrings(p); break;
             case RIL_REQUEST_DATA_REGISTRATION_STATE: ret =  responseStrings(p); break;
